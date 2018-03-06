@@ -9,22 +9,27 @@
 
     function onDeviceReady() {
         // 處理 Cordova 暫停與繼續事件
-        document.addEventListener( 'pause', onPause.bind( this ), false );
-        document.addEventListener( 'resume', onResume.bind( this ), false );
+        //document.addEventListener( 'pause', onPause.bind( this ), false );
+        //document.addEventListener( 'resume', onResume.bind( this ), false );
         
         // TODO: Cordova 已載入。請在這裡執行任何需要 Cordova 的初始化作業。
-        var parentElement = document.getElementById('deviceready');
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+        document.getElementById("btnDeviceInfo").addEventListener("click", OnDeviceInfo);
+       
     };
 
-    function onPause() {
+    function onPause() { //砍掉結尾{}分號
         // TODO: 這個應用程式已暫停。請在這裡儲存應用程式狀態。
-    };
+    }
 
-    function onResume() {
+    function onResume() {//砍掉結尾{}分號
         // TODO: 這個應用程式已重新啟動。請在這裡還原應用程式狀態。
-    };
-} )();
+    }
+})();
+
+function OnDeviceInfo() {
+    var info = "Cordova:" + device.cordova + "<br />" +
+        "Platform:" + device.platform + "<br />" +
+        "Version:" + device.version + "<br/>" +
+        "Model:" + device.model + "<br/>";
+    document.getElementById("DeviceInfo").innerHTML = info;
+}

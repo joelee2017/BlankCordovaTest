@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     <head>
     <!--
@@ -15,12 +15,9 @@
         <title>BlankCordovaTest</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">正在連接到裝置</p>
-                <p class="event received">裝置已就緒</p>
-            </div>
+        <div>
+           <button type="button" id="btnDeviceInfo" class="btn btn-success">裝置資訊</button>
+            <p id="DeviceInfo"></p>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="scripts/platformOverrides.js"></script>
